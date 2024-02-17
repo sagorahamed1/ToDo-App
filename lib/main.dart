@@ -16,12 +16,11 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: Size(375, 812),
       child: GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'To Do App',
+          debugShowCheckedModeBanner: false,
+          title: 'To Do App',
           theme: Themes().lightTheme,
           darkTheme: Themes().darkTheme,
-        home: LogInScreen()
-      ),
+          home: LogInScreen()),
     );
   }
 }
