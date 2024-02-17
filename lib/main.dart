@@ -5,7 +5,8 @@ import 'package:to_do_app/themes/themes.dart';
 import 'package:to_do_app/views/screens/log_in_screen/login_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(ScreenUtilInit(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

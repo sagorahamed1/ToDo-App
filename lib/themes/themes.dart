@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Themes {
   final lightTheme = ThemeData.light().copyWith(
     ///-------------------------elevated button theme------------------------->
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.all(20),
-          backgroundColor: Colors.red,
+          padding:  const EdgeInsets.all(20),
+          backgroundColor: const Color(0xFFF79E89),
           foregroundColor: Colors.white,
-          minimumSize: const Size(double.maxFinite, 56),
+          minimumSize:   Size(double.maxFinite, 46.h),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: BorderRadius.circular(8.r),
           ),
-          textStyle: const TextStyle(
-            fontSize: 16,
+          textStyle:  TextStyle(
+            fontSize: 16.h,
             fontWeight: FontWeight.w600,
             color: Colors.white,
           ),
@@ -22,22 +23,19 @@ class Themes {
 
 
       inputDecorationTheme: InputDecorationTheme(
+        contentPadding: EdgeInsets.symmetric(horizontal: 20.h),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Color(0xFF949494))
+          borderRadius: BorderRadius.circular(8.r),
+          borderSide: const BorderSide(color: Color(0xFF949494))
         )
       ),
 
       ///-----------------app bar theme------------------>
       appBarTheme: const AppBarTheme(
           color: Colors.white,
-          // backgroundColor: Colors.white10,
           centerTitle: true,
-          elevation: 5,
           shadowColor: Colors.green)
   );
-
-
 
 
   final darkTheme = ThemeData.dark().copyWith(
@@ -45,7 +43,7 @@ class Themes {
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           padding: const EdgeInsets.all(20),
-          backgroundColor: Colors.red,
+          backgroundColor: Color(0xFFF79E89),
           foregroundColor: Colors.white,
           minimumSize: const Size(double.maxFinite, 56),
           shape: RoundedRectangleBorder(
@@ -65,7 +63,6 @@ class Themes {
               borderSide: BorderSide(color: Color(0xFF949494))
           )
       ),
-
 
       ///-----------------app bar theme------------------>
       appBarTheme: const AppBarTheme(
