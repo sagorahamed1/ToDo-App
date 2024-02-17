@@ -5,7 +5,7 @@ class Themes {
     ///-------------------------elevated button theme------------------------->
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           backgroundColor: Colors.red,
           foregroundColor: Colors.white,
           minimumSize: const Size(double.maxFinite, 56),
@@ -18,6 +18,14 @@ class Themes {
             color: Colors.white,
           ),
         ),
+      ),
+
+
+      inputDecorationTheme: InputDecorationTheme(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: Color(0xFF949494))
+        )
       ),
 
       ///-----------------app bar theme------------------>
@@ -32,13 +40,11 @@ class Themes {
 
 
 
-
   final darkTheme = ThemeData.dark().copyWith(
-
     ///-------------------------elevated button theme------------------------->
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           backgroundColor: Colors.red,
           foregroundColor: Colors.white,
           minimumSize: const Size(double.maxFinite, 56),
@@ -52,6 +58,14 @@ class Themes {
           ),
         ),
       ),
+
+      inputDecorationTheme: InputDecorationTheme(
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(color: Color(0xFF949494))
+          )
+      ),
+
 
       ///-----------------app bar theme------------------>
       appBarTheme: const AppBarTheme(
