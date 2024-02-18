@@ -5,6 +5,7 @@ import 'package:to_do_app/utils/app_images.dart';
 import 'package:to_do_app/views/widgets/custom_text.dart';
 
 import '../../../utils/app_colors.dart';
+import '../register_screen/registaition_screen.dart';
 
 class LogInScreen extends StatelessWidget {
   LogInScreen({super.key});
@@ -30,7 +31,7 @@ class LogInScreen extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: 180.h,
+                  height: 160.h,
                 ),
 
                 ///----------------------------logo image--------------------------------->
@@ -46,6 +47,7 @@ class LogInScreen extends StatelessWidget {
                   height: 170.h,
                 ),
 
+                ///-------------------------Email------------------------>
                 TextFormField(
                   controller: emailController,
                   decoration: const InputDecoration(
@@ -63,6 +65,7 @@ class LogInScreen extends StatelessWidget {
                   height: 16.h,
                 ),
 
+
                 Obx(()=> TextFormField(
                     controller: passwordController,
                     obscureText: _isObscured.value,
@@ -71,25 +74,26 @@ class LogInScreen extends StatelessWidget {
                       suffixIcon: IconButton(
                         icon: Icon(
                           _isObscured.value
-                              ? Icons.visibility
-                              : Icons.visibility_off,
+                              ? Icons.visibility_off
+                              : Icons.visibility,
                           color: AppColors.textColor,
                         ),
                         onPressed: () {
-                          // Toggle the password visibility
                           IsObscured();
                         },
                       ),
-                      labelStyle: TextStyle(color: AppColors.textColor),
+                      labelStyle: const TextStyle(color: AppColors.textColor),
                     ),
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Please enter your password";
+                      if (value == null || value.isEmpty || value.length < 5) {
+                        return "Please enter 5 Digit password";
                       }
                     },
                   ),
                 ),
 
+
+                ///--------------------------forgot password--------------------------->
                 Align(
                   alignment: Alignment.centerRight,
                   child: CustomText(
@@ -101,14 +105,17 @@ class LogInScreen extends StatelessWidget {
                   ),
                 ),
 
+
                 ElevatedButton(
                   onPressed: () {
-                    ///------------------------sign-in method----------------------------->
+                    ///------------------------sign-up method----------------------------->
                     signIn();
                   },
                   child: const Text("SIGN IN"),
                 ),
 
+
+                SizedBox(height: 16.h,),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -118,14 +125,18 @@ class LogInScreen extends StatelessWidget {
                       color: AppColors.textColor,
                       fontsize: 12.h,
                       fontWeight: FontWeight.w400,
-                      top: 16.h,
                     ),
-                    CustomText(
-                      text: "Sign up",
-                      color: Colors.red,
-                      fontsize: 12.h,
-                      fontWeight: FontWeight.w400,
-                      top: 16.h,
+                    TextButton(
+                      onPressed: (){
+                         Get.to(()=> RegistrationScreen());
+                        // Navigator.of(context).push(MaterialPageRoute(builder: (context)=> RegistaitionScreen()));
+                      },
+                      child: CustomText(
+                        text: " Sign up",
+                        color: Colors.red,
+                        fontsize: 12.h,
+                        fontWeight: FontWeight.w400,
+                      ),
                     )
                   ],
                 )
@@ -139,7 +150,6 @@ class LogInScreen extends StatelessWidget {
 
   void signIn() {
     if (_globalKey.currentState!.validate()) {
-      // Implement your sign-in logic here
     }
   }
 }

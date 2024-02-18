@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Themes {
   final lightTheme = ThemeData.light().copyWith(
@@ -9,12 +8,12 @@ class Themes {
           padding:  const EdgeInsets.all(20),
           backgroundColor: const Color(0xFFF79E89),
           foregroundColor: Colors.white,
-          minimumSize:   Size(double.maxFinite, 46.h),
+          minimumSize:   Size(double.maxFinite, 46),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.r),
+            borderRadius: BorderRadius.circular(8),
           ),
           textStyle:  TextStyle(
-            fontSize: 16.h,
+            fontSize: 16,
             fontWeight: FontWeight.w600,
             color: Colors.white,
           ),
@@ -23,9 +22,9 @@ class Themes {
 
 
       inputDecorationTheme: InputDecorationTheme(
-        contentPadding: EdgeInsets.symmetric(horizontal: 20.h),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8.r),
+          borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: Color(0xFF949494))
         )
       ),
