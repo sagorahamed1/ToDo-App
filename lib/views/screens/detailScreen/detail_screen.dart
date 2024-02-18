@@ -41,12 +41,10 @@ class DetailScreen extends StatelessWidget {
               icon: Icon(Icons.edit, size: 25.w)),
           IconButton(
               onPressed: () {
-                Get.bottomSheet(
-                  DeletedScreen(),
-                );
+                Get.bottomSheet(DeletedScreen());
               },
               icon: Icon(Icons.delete_forever, size: 25.w)),
-          SizedBox(width: 24.w)
+          //SizedBox(width: 24.w)
         ],
       ),
       //================================>  Body Section <==================================
