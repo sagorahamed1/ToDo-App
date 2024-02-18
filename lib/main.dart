@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
           title: 'To Do App',
           theme: Themes().lightTheme,
           darkTheme: Themes().darkTheme,
-          initialRoute: AppRoutes.detailScreen,
+          initialRoute: AppRoutes.homeScreen,
           getPages: AppRoutes.routes,
-        home: DetailScreen()
+        home: HomeScreen()
       ),
     );
   }
