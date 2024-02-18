@@ -9,8 +9,8 @@ import 'views/screens/detailScreen/detail_screen.dart';
 import 'views/screens/homeScreen/home_screen.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+ WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(375.w, 812.h),
+      designSize: Size(375, 812),
       child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'To Do App',
