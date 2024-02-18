@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:to_do_app/views/widgets/custom_text.dart';
+import '../../../utils/app_colors.dart';
 import '../../../utils/app_constants.dart';
 import '../../../utils/app_icons.dart';
+import '../addBottomSheet/add_bottom_sheet.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -30,7 +33,23 @@ class HomeScreen extends StatelessWidget {
       //================================>  FloatingActionButton Section <=================================
 
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(context: context, builder: (BuildContext context){
+            return Container(
+              height: 722.h,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: const Color(0xffF79E89),
+                borderRadius: BorderRadius.only(topLeft: Radius.circular(20.r),topRight:Radius.circular(20.r)),
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 24.w),
+                child: AddBottomSheet(),
+              ),
+
+            );
+          });
+        },
         shape: const OvalBorder(),
         backgroundColor: const Color(0xffF76C6A),
         child: const Icon(
@@ -114,3 +133,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
