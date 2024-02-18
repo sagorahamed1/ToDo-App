@@ -5,6 +5,7 @@ import 'package:to_do_app/routes/app_routes.dart';
 import 'package:to_do_app/themes/themes.dart';
 import 'package:to_do_app/views/screens/log_in_screen/login_screen.dart';
 
+import 'views/screens/detailScreen/detail_screen.dart';
 import 'views/screens/homeScreen/home_screen.dart';
 
 void main() {
@@ -25,9 +26,9 @@ class MyApp extends StatelessWidget {
           title: 'To Do App',
           theme: Themes().lightTheme,
           darkTheme: Themes().darkTheme,
-          initialRoute: AppRoutes.logInScreen,
+          initialRoute: AppRoutes.detailScreen,
           getPages: AppRoutes.routes,
-        home: LogInScreen()
+        home: DetailScreen()
       ),
     );
   }
