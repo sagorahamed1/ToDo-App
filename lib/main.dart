@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:to_do_app/themes/themes.dart';
 import 'package:to_do_app/views/screens/log_in_screen/login_screen.dart';
 
+import 'views/screens/homeScreen/home_screen.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(ScreenUtilInit(child: MyApp()));
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
           title: 'To Do App',
           theme: Themes().lightTheme,
           darkTheme: Themes().darkTheme,
-          home: LogInScreen()),
+          home: HomeScreen()),
     );
   }
 }
