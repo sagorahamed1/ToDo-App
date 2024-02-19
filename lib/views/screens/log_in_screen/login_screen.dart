@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:to_do_app/utils/app_images.dart';
+import 'package:to_do_app/views/screens/profile_screen/profile_screen.dart';
 import 'package:to_do_app/views/widgets/custom_text.dart';
 
 import '../../../utils/app_colors.dart';
@@ -108,6 +109,8 @@ class LogInScreen extends StatelessWidget {
 
                 ElevatedButton(
                   onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ProfileScreen()));
+                    // ProfileScreen();
                     ///------------------------sign-up method----------------------------->
                     signIn();
                   },
