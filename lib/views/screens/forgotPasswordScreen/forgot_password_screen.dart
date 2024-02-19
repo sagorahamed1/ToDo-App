@@ -96,7 +96,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty || value.length < 5) {
-                        return "Please enter 5 Digit password";
+                        return "Please Re_enter 5 Digit password";
                       }
                     },
                   ),
