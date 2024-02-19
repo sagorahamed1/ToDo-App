@@ -8,7 +8,7 @@ class SignUpController extends GetxController {
 
   Future<void> CreateUser(String name, String email, String password, String confirmpassword) async {
     try {
-      var url = Uri.parse("https://demo.alorferi.com/api/register");
+      var url = Uri.parse("url");
       var body ={
         "name": name,
         "email": email,
