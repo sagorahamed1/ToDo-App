@@ -20,99 +20,93 @@ class ForgotPasswordScreen extends StatelessWidget {
     }
 
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 26),
-          child: Form(
-            key: _globalKey,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 160.h,
-                ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 26),
+        child: Form(
+          key: _globalKey,
+          child: Column(
+            children: [
+              SizedBox(height: 113.h),
 
-                ///===============================> logo image <=================================
-                Align(
-                  alignment: Alignment.center,
-                  child: Image.asset(
-                    AppImages.todo_logo,
-                    width: 180.w,
-                    height: 170.h,
-                  ),
+              //===============================> logo image <=================================
+              Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  AppImages.todo_logo,
+                  width: 187.w,
+                  height: 180.h,
                 ),
-                SizedBox(
-                  height: 170.h,
-                ),
+              ),
+              SizedBox(height: 125.h),
 
-                ///========================================> Email <==================================
+              //========================================> Email <==================================
 
-                Obx(
-                  () => TextFormField(
-                    controller: passwordController,
-                    obscureText: _isObscured.value,
-                    decoration: InputDecoration(
-                      hintText: "Password",
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _isObscured.value
-                              ? Icons.visibility_off
-                              : Icons.visibility,
-                          color: AppColors.textColor,
-                        ),
-                        onPressed: () {
-                          IsObscured();
-                        },
+              Obx(
+                () => TextFormField(
+                  controller: passwordController,
+                  obscureText: _isObscured.value,
+                  decoration: InputDecoration(
+                    hintText: "Password",
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _isObscured.value
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                        color: AppColors.textColor,
                       ),
-                      labelStyle: const TextStyle(color: AppColors.textColor),
+                      onPressed: () {
+                        IsObscured();
+                      },
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty || value.length < 5) {
-                        return "Please enter 5 Digit password";
-                      }
-                    },
+                    labelStyle: const TextStyle(color: AppColors.textColor),
                   ),
-                ),
-
-                SizedBox(height: 16.h),
-
-                Obx(
-                  () => TextFormField(
-                    controller: passwordController,
-                    obscureText: _isObscured.value,
-                    decoration: InputDecoration(
-                      hintText: "Confirm Password",
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _isObscured.value
-                              ? Icons.visibility_off
-                              : Icons.visibility,
-                          color: AppColors.textColor,
-                        ),
-                        onPressed: () {
-                          IsObscured();
-                        },
-                      ),
-                      labelStyle: const TextStyle(color: AppColors.textColor),
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty || value.length < 5) {
-                        return "Please Re_enter 5 Digit password";
-                      }
-                    },
-                  ),
-                ),
-                SizedBox(height: 24.h),
-
-                ElevatedButton(
-                  onPressed: () {
-                    forgotPass();
+                  validator: (value) {
+                    if (value == null || value.isEmpty || value.length < 5) {
+                      return "Please enter 5 Digit password";
+                    }
                   },
-                  child: const Text("CHANGE PASSWORD"),
                 ),
+              ),
 
-                SizedBox(height: 76.h),
-              ],
-            ),
+              SizedBox(height: 16.h),
+
+              Obx(
+                () => TextFormField(
+                  controller: passwordController,
+                  obscureText: _isObscured.value,
+                  decoration: InputDecoration(
+                    hintText: "Confirm Password",
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        _isObscured.value
+                            ? Icons.visibility_off
+                            : Icons.visibility,
+                        color: AppColors.textColor,
+                      ),
+                      onPressed: () {
+                        IsObscured();
+                      },
+                    ),
+                    labelStyle: const TextStyle(color: AppColors.textColor),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.isEmpty || value.length < 5) {
+                      return "Please Re_enter 5 Digit password";
+                    }
+                  },
+                ),
+              ),
+              SizedBox(height: 24.h),
+
+              ElevatedButton(
+                onPressed: () {
+                  forgotPass();
+                },
+                child: const Text("CHANGE PASSWORD"),
+              ),
+
+              SizedBox(height: 76.h),
+            ],
           ),
         ),
       ),
