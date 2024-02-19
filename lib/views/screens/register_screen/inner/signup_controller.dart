@@ -25,7 +25,6 @@ class SignUpController extends GetxController {
         message.value = signUpMessages;
         print("User create successful");
       } else {
-        // Print more details about the response
         print("User create failed with status code: ${response.statusCode}");
         print("Response body: ${response.body}");
       }
