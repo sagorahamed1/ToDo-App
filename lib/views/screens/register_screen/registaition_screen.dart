@@ -43,7 +43,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             child: Column(
               children: [
                 SizedBox(
-                  height: 160.h,
+                  height: 100.h,
                 ),
 
                 ///----------------------------logo image--------------------------------->

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:to_do_app/routes/app_routes.dart';
+import 'package:to_do_app/views/screens/profile_screen/profile_screen.dart';
 import '../../../utils/app_constants.dart';
 import '../../../utils/app_icons.dart';
 import '../addBottomSheet/add_bottom_sheet.dart';
@@ -25,7 +26,9 @@ class HomeScreen extends StatelessWidget {
         ),
         centerTitle: false,
         actions: [
-          Icon(Icons.settings_outlined, size: 25.w),
+          IconButton(onPressed: (){
+            Get.to(()=>ProfileScreen());
+          }, icon: Icon(Icons.settings_outlined, size: 25.w),),
           SizedBox(
             width: 24.w,
           )
