@@ -22,8 +22,9 @@ class Themes {
 
 
       inputDecorationTheme: InputDecorationTheme(
-        contentPadding: EdgeInsets.symmetric(horizontal: 20),
-        border: OutlineInputBorder(
+        hintStyle: const TextStyle(color:Color(0xFF949494)),
+        contentPadding: const EdgeInsets.symmetric(vertical: 14,horizontal: 20),
+        enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: Color(0xFF949494))
         )
