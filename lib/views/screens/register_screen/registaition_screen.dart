@@ -1,11 +1,10 @@
 
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:to_do_app/views/screens/log_in_screen/login_screen.dart';
 
+import '../../../controller/register_controller.dart';
 import '../../../utils/app_colors.dart';
 import '../../../utils/app_images.dart';
 import '../../widgets/custom_text.dart';
@@ -18,6 +17,8 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+
+   ResgisterController resgisterController = Get.put(ResgisterController());
   TextEditingController emailController = TextEditingController();
   TextEditingController nameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -73,7 +74,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   },
                 ),
 
-                SizedBox(height: 16,),
+                const SizedBox(height: 16,),
 
                 ///-------------------------Full Name------------------------>
                 TextFormField(
@@ -160,6 +161,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   onPressed: () {
                     ///------------------------sign-Up method----------------------------->
                     _signUp();
+                     resgisterController.resgisterWithUserInfo(nameController.text, emailController.text, passwordController.text);
+
                   },
                   child: const Text("SIGN UP"),
                 ),
@@ -206,13 +209,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     if (_validateFields()) {
       Future.delayed(Duration(seconds: 2), () {
         setState(() {
+          nameController.clear();
           emailController.clear();
           passwordController.clear();
           confirmPasswordController.clear();
           errorMessage = '';
         });
 
-        // Navigate to the login screen after signup
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => LogInScreen(),

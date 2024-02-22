@@ -8,11 +8,11 @@ class Themes {
           padding:  const EdgeInsets.all(20),
           backgroundColor: const Color(0xFFF79E89),
           foregroundColor: Colors.white,
-          minimumSize:   Size(double.maxFinite, 46),
+          minimumSize:   const Size(double.maxFinite, 46),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
-          textStyle:  TextStyle(
+          textStyle:  const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
             color: Colors.white,
@@ -24,7 +24,7 @@ class Themes {
       inputDecorationTheme: InputDecorationTheme(
         hintStyle: const TextStyle(color:Color(0xFF949494)),
         contentPadding: const EdgeInsets.symmetric(vertical: 14,horizontal: 20),
-        enabledBorder: OutlineInputBorder(
+        border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: const BorderSide(color: Color(0xFF949494))
         )

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:to_do_app/utils/app_images.dart';
+import 'package:to_do_app/views/screens/homeScreen/home_screen.dart';
 import 'package:to_do_app/views/widgets/custom_text.dart';
 
 import '../../../utils/app_colors.dart';
+import '../forgotPasswordScreen/forgot_password_screen.dart';
 import '../register_screen/registaition_screen.dart';
 
 class LogInScreen extends StatelessWidget {
@@ -43,21 +45,9 @@ class LogInScreen extends StatelessWidget {
                     height: 170.h,
                   ),
                 ),
-                SizedBox(
-                  height: 100.h,
-                ),
-              ///----------------------------logo image--------------------------------->
-              Align(
-                alignment: Alignment.center,
-                child: Image.asset(
-                  AppImages.todo_logo,
-                  width: 180.w,
-                  height: 170.h,
-                ),
-              ),
-              SizedBox(
-                height: 170.h,
-              ),
+
+
+              SizedBox(height: 100.h,),
 
               ///-------------------------Email------------------------>
               TextFormField(
@@ -108,12 +98,17 @@ class LogInScreen extends StatelessWidget {
               ///--------------------------forgot password--------------------------->
               Align(
                 alignment: Alignment.centerRight,
-                child: CustomText(
-                  textAlign: TextAlign.end,
-                  text: "Forgot Password?",
-                  top: 16.h,
-                  bottom: 16.h,
-                  color: AppColors.textColor,
+                child: GestureDetector(
+                  onTap: (){
+                    Get.to(()=> ForgotPasswordScreen());
+                  },
+                  child: CustomText(
+                    textAlign: TextAlign.end,
+                    text: "Forgot Password?",
+                    top: 16.h,
+                    bottom: 16.h,
+                    color: AppColors.textColor,
+                  ),
                 ),
               ),
 
@@ -158,7 +153,7 @@ class LogInScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ));
   }
 
   void signIn() {
