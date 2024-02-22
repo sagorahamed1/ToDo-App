@@ -7,7 +7,11 @@ import 'package:http/http.dart' as http;
 
 class ResgisterController extends GetxController{
   RxString message = ''.obs;
-  
+
+
+
+
+
   Future<void> resgisterWithUserInfo(String userName, email, password)async{
     try{
       String url = "https://e07c2a17-7f14-415f-b55d-86164928bd39.mock.pstmn.io/sign_up";
