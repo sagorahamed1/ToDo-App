@@ -14,9 +14,9 @@ class DetailScreen extends StatelessWidget {
       //================================>  AppBar Section <=================================
       appBar: AppBar(
         actions: [
-          // IconButton(
-          //     onPressed: () {},
-          //     icon: Icon(Icons.access_time_sharp, size: 25.w)),
+          IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.access_time_sharp, size: 25.w)),
           IconButton(
               onPressed: () {
                 showModalBottomSheet(
